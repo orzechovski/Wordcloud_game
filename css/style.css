@@ -1,0 +1,71 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --btnColor: #3586dd;
+  --primaryBadWordColor: #f4534b;
+  --secondaryBadWordColor: #fc928c;
+  --primaryGoodWordColor: #4cae4e;
+  --secondaryGoodWordColor: #8dc252;
+  --grayColor: #b7b7b7;
+
+  font-size: 62.5%;
+  font-family: "Lato", sans-serif;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: max(36rem, 60vw);
+  height: max(36rem, 30vw);
+  font-size: clamp(1.5rem, 1.8vw, 3rem);
+}
+.wrap > * {
+  margin: 0.8rem 0;
+}
+.btn {
+  font-size: clamp(1.5rem, 1.4vw, 2.2rem);
+  padding: 0.3em 2em;
+  color: var(--btnColor);
+  background-color: transparent;
+  border: 0.2rem solid var(--btnColor);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.1s, color 0.1s;
+}
+.btn:hover {
+  background-color: var(--btnColor);
+  color: white;
+}
+input {
+  font-size: clamp(1.5rem, 1.4vw, 2.2rem);
+  width: max(30rem, 40%);
+  height: 5rem;
+  padding: 0.2em;
+  background-color: transparent;
+  border: 0.2rem solid var(--grayColor);
+  border-radius: 0.5rem;
+  outline: none;
+}
+
+.game__board {
+  flex-grow: 1;
+  width: 90%;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+}
+.hidden {
+  display: none;
+}

@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/png" sizes="32x32" href="sources/favicon.png" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Wordcloud-game</title>
@@ -15,18 +18,19 @@
         <input type="text" class="start__nick" placeholder="Enter your nickname here..." />
         <button class="btn start__button">play</button>
       </div>
-      <div class="wrap game">
-        <h2>Game category: <span class="game__category"> </span></h2>
+      <div class="wrap game hidden">
+        <h3>Game category: <span class="game__category"> </span></h3>
         <div class="game__board">
           <ul></ul>
         </div>
         <button class="btn game__check">check answers</button>
       </div>
-      <div class="wrap result">
+      <div class="wrap result hidden">
         <h2>Congratulations, <span class="result__nick"> tommy</span></h2>
         <h2>Your score:</h2>
         <h3><span class="result__points">3</span> points</h3>
       </div>
     </main>
+    <script type="module" src="app/Game.js"></script>
   </body>
 </html>
