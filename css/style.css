@@ -74,6 +74,9 @@ li {
   list-style: none;
   cursor: pointer;
 }
+.chosen {
+  color: var(--grayColor);
+}
 .hidden {
   display: none;
 }

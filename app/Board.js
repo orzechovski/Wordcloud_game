@@ -36,4 +36,30 @@ export class Board {
     });
     return table;
   }
+
+  checkAnswers(categoryNumber, userAnswers) {
+    let rightAnswers = this.categoryAndWord[categoryNumber].goodWords; //dobre odpowiedzi
+    let allAnswers = this.categoryAndWord[categoryNumber].allwords; //wszystkie odpowiedzi
+    let allBadAnswers = [];
+    let pickedGoodAnswers = [];
+    let pickedBadAnswers = [];
+    let countOfRightAnswers = 0; // licznik dobrych odpowiedzi
+    let countOfBadAnswers = 0; //licznik złych odpowiedzi
+    let unPickedAnswers = 0; //licznik nie zaznaczonych dobrych odpowiedzi
+    rightAnswers.forEach((answer) => {
+      if (!userAnswers.includes(answer)) {
+        unPickedAnswers++;
+      }
+    });
+    allAnswers.forEach((answer) => {
+      if (!rightAnswers.includes(answer)) allBadAnswers.push(answer);
+    });
+
+    rightAnswers.forEach((answer) => (userAnswers.includes(answer) ? (countOfRightAnswers++, pickedGoodAnswers.push(answer)) : countOfRightAnswers));
+    allBadAnswers.forEach((answer) => (userAnswers.includes(answer) ? (countOfBadAnswers++, pickedBadAnswers.push(answer)) : countOfBadAnswers));
+
+    let finalScore = countOfRightAnswers * 2 - (countOfBadAnswers + unPickedAnswers);
+
+    return [finalScore, pickedGoodAnswers];
+  }
 }
