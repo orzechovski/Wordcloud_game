@@ -61,10 +61,18 @@ input {
 }
 
 .game__board {
+  position: relative;
   flex-grow: 1;
   width: 90%;
   border: 1px solid black;
   border-radius: 0.5rem;
+}
+li {
+  position: absolute;
+  font-size: clamp(1.5rem, 1.4vw, 2.2rem);
+  font-weight: bold;
+  list-style: none;
+  cursor: pointer;
 }
 .hidden {
   display: none;
