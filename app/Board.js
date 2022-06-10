@@ -12,7 +12,7 @@ export class Board {
     },
     { category: "vehicels", allwords: ["belief", "wire", "car", "bus", "star", "river", "hat", "skirt", "train"], goodWords: ["car", "bus", "train"] },
   ];
-
+  //create li for every word of chosen category
   createTable() {
     let tableWords = [];
     const drawCategoryNumber = Math.floor(Math.random() * this.categoryAndWord.length);
@@ -27,6 +27,7 @@ export class Board {
     });
     return [tableWords, category, drawCategoryNumber];
   }
+  //randomize position of our words
   randomizePosition(table) {
     table.forEach((li) => {
       let randomTop = Math.floor(Math.random() * 90);
@@ -38,14 +39,14 @@ export class Board {
   }
 
   checkAnswers(categoryNumber, userAnswers) {
-    let rightAnswers = this.categoryAndWord[categoryNumber].goodWords; //dobre odpowiedzi
-    let allAnswers = this.categoryAndWord[categoryNumber].allwords; //wszystkie odpowiedzi
+    let rightAnswers = this.categoryAndWord[categoryNumber].goodWords; //good answers
+    let allAnswers = this.categoryAndWord[categoryNumber].allwords; //all answers
     let allBadAnswers = [];
     let pickedGoodAnswers = [];
     let pickedBadAnswers = [];
-    let countOfRightAnswers = 0; // licznik dobrych odpowiedzi
-    let countOfBadAnswers = 0; //licznik złych odpowiedzi
-    let unPickedAnswers = 0; //licznik nie zaznaczonych dobrych odpowiedzi
+    let countOfRightAnswers = 0; // counter of good answers
+    let countOfBadAnswers = 0; //counter of bad answers
+    let unPickedAnswers = 0; //counter of good answers but not picked
     rightAnswers.forEach((answer) => {
       if (!userAnswers.includes(answer)) {
         unPickedAnswers++;

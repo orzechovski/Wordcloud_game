@@ -1,35 +1,41 @@
 export class NickInput {
   checkNick(nick) {
-    const erros = [];
+    const errors = [];
+
+    //check if our input isnt empty
     if (nick === "" || nick === null) {
-      erros.push("Your nick name is empty");
+      errors.push("Your nick name is empty");
     } else {
+      //check length of input
       if (nick.length < 3) {
-        erros.push("Your nick must contain at least 3 characters");
+        errors.push("Your nick must contain at least 3 characters");
       } else {
         for (const char of nick) {
+          //check for spaces
           if (char === " ") {
-            erros.push("You cant have spaces in your nick name");
-            alert(erros);
+            errors.push("You cant have spaces in your nick name");
+            alert(errors);
             return false;
           } else {
-            const letters = [];
+            const letters = []; // here is an alphabet
             for (let i = 0; i < 26; i++) {
               letters.push((i + 10).toString(36));
             }
+            //checks if in input are only letters
             if (!letters.includes(char)) {
-              erros.push("Your nick can only contain letters");
-              alert(erros);
+              errors.push("Your nick can only contain letters");
+              alert(errors);
               return false;
             }
           }
         }
       }
     }
-    if (erros.length === 0) {
+    //if there is no errors in table named errorss table
+    if (errors.length === 0) {
       return true;
     } else {
-      alert(erros);
+      alert(errors);
       return false;
     }
   }
