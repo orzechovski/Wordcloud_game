@@ -77,6 +77,32 @@ li {
 .chosen {
   color: var(--grayColor);
 }
+.chosen--good {
+  color: var(--secondaryGoodWordColor);
+}
+.chosen--bad {
+  color: var(--primaryBadWordColor);
+}
+.chosen--good::before,
+.chosen--good::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -80%);
+}
+.chosen--bad::before {
+  content: "Bad";
+  color: var(--secondaryBadWordColor);
+}
+.chosen--good::before {
+  content: "Good";
+  color: var(--primaryGoodWordColor);
+}
+.result > h3 {
+  font-weight: bold;
+  color: var(--btnColor);
+}
+
 .hidden {
   display: none;
 }
